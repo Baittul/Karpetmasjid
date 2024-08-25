@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karpet Maajid Almuslim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #660099;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #25D366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #1ebe5b;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            font-size: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(to bottom, #974 10%, #fff 90%);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+        }
+
+        footer ul li {
+            margin-bottom: 5px;
+        }
+
+        details {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="back-button" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i> 
+    </button>
+    <div class="product-container">
+        <img src="dynasti1.jpg" alt="Nama Produk">
+        <h2>dinasty</h2>
+        <p>Harga: 200.000/meter</p>
+        <a href="https://api.whatsapp.com/send?phone=6281412382103" class="button">Beli Sekarang</a>
+        <footer>
+            <p>Bayar di tempat, pesan sekarang, tim kami langsung ke lokasi.</p>
+            <ul>
+                <li>Tebal karpet ±13 mili</li>
+                <li>Lebar 120cm</li>
+                <li>Panjang Rol 30 meter</li>
+            </ul>
+            <details>
+                <summary>Lihat Detail</summary>
+                <p>karpet ku karpet turky dan lokal</p>
+            </details>
+        </footer>
+    </div>
+</body>
+
+</html>
