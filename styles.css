@@ -8,7 +8,7 @@
 
 
 body {
-    background-color: #8C67AE;
+    background-color: #4D4D4F;
     color: black;
     font-family: 'palatino', sans-serif;
     font-weight: normal;
@@ -16,7 +16,7 @@ body {
 }
 
 .header {
-    background-color: #B16D6A;
+    background-color: #34282C;
     padding: 10px;
     text-align: center;
     display: flex;
@@ -77,6 +77,9 @@ body {
     gap: 10px;
     padding: 10px;
     text-align: center;
+    background-color: #454545;
+    border-radius: 10px;
+    border:1px solid #333;
 }
 
 .product-item {
