@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baittulmuslim</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">Baittulmuslim</div>
+    <header id="navbar">
+        <div class="logo">
+          <img src="logo.png">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
 
 <section class="carousel">
     <div class="carousel-container">
@@ -25,7 +39,7 @@
     </div>
 </section>
 
-<p style="padding:10px;margin-top:0;color: #fff;">kategory</p>
+<p style="padding:10px;margin-top:0;color: #fff;font-size:15px;">kategory</p>
 <section class="zipmsi-grid">
     <div class="product-item">
       <a href="config2.html">
@@ -33,7 +47,7 @@
         turky
     </div>
     <div class="product-item">
-      <a href="https://baittul.github.io/Tokokarpet1/">
+      <a href="config2.html">
         <img src="ixon2.png" alt="Icon Bluemosque"></a>
         Bluemosque
     </div>
@@ -66,21 +80,21 @@
      <h style="float:left;margin:10px;font-family: 'Arial', sans-serif;font-size:15px;color:#fff;
 font-weight: bold">Cari karpet idaman umat muslim</h>
         <div id="berita" class="tabcontentt">
-  <a href="Login.html">
+  <a href="https://profilzipmsi/">
        <div class='box' style="z-index:5;display:inline-block;width:90%;height:auto;margin-right:10px;
             margin-left:20px;border-bottom:0.5px solid Gainsboro;border-radius:15px;padding-bottom:1px;">
        <img style='width:100%;border-top-left-radius: 10px;border-top-right-radius: 20px;' src="programmer.gif">
        </a>
-       <div style="border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;color:red;blue-space: normal;padding:5px;text-align:Left;"><h3 style="font-size:14px;font-weight: bold animation: colorChange 2s infinite;">#order yuk</h3><br><p1 style="opacity:.7;font-size:12px;color:#fff;
+       <div style="border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;color:blue;blue-space: normal;padding:5px;text-align:Left;"><h3 style="font-size:14px;font-weight: bold animation: colorChange 3s infinite;border-radius:2px;display:inline;">#order yuk</h3><br><p1 style="opacity:.7;font-size:12px;color:#fff;
 "> siap antar sampai tujuan.  #Seluruh,indonesia</p1></div> 
       </div>
        </div>  
-            <h style="float:left;margin:22px;font-family: 'Arial', sans-serif;font-size:13px;color:#fff;
-font-weight: bold">Pasti murah</h><a href='#'>
-<p style="color:white;float:right;margin:22px;font-family: 'Arial', sans-serif;font-size:13px">selengkapnya</p></a>
+            <h style="float:left;margin:15px;font-family: 'Arial', sans-serif;font-size:13px;color:#fff;
+font-weight: bold">Pasti murah</h><a href='config2.html'>
+<p style="color:red;float:right;margin:15px;font-family: 'Arial', sans-serif;font-size:15px">lihatsemua></p></a>
 
     </section>
-    
+      <script src="script.js"></script>  
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -95,6 +109,13 @@ font-weight: bold">Pasti murah</h><a href='#'>
         android:layout_height="wrap_content"
         android:src="@drawable/your_icon" />
 </RelativeLayout>
+    <audio id="weddingMusic" src="pengajian.mp3" autoplay loop></audio>
+    <script>
+      window.addEventListener('click', function() {
+    var audio = document.getElementById('weddingMusic');
+    audio.play();
+});
 
+    </script>
 </body>
 </html>
