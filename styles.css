@@ -179,6 +179,7 @@ nav ul li a:hover {
 #home {
     background-color: #f4f4f4;
     display: flex;
+    margin: 3px;
 }
 
 #about {
