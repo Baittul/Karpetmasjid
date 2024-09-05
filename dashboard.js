@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Simulasi login sederhana
     if (username === 'admin' && password === '12345') {
         localStorage.setItem('loggedInUser', username); // Simpan nama pengguna
-        window.location.href = 'dashboard.html'; // Redirect ke dashboard
+        window.location.href = 'https://github.com/Baittul/Karpetmasjid/tree/main'; // Redirect ke dashboard
     } else {
         document.getElementById('message').textContent = 'Invalid username or password';
     }
