@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almuslim</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .dashboard-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+#logoutButton {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FF6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #e53e3e;
+}
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="usernameDisplay"></span>!</h2>
+        <p>This is your dashboard.</p>
+        <button id="logoutButton">Logout</button>
+    </div>
+    <script src="dashboard.js"></script>
+        <script src="javascript.js"></script>
+</body>
+</html>
