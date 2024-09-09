@@ -118,7 +118,7 @@
 }
 
 body {
-    background-color: #1569C7;
+    background-color: #50C878;
     color: black;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: normal;
@@ -130,10 +130,10 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: #008080;
+    background-color: #22CE83;
     padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: top 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    transition: top 0.3s;
     z-index: 1000;
   
 }
@@ -245,7 +245,8 @@ nav ul li a:hover {
     padding: 10px;
     text-align: center;
     background-color: ;
-    border-radius: 10px;
+    border-radius: 10px 5px;
+    
     
   
 }
@@ -263,7 +264,9 @@ nav ul li a:hover {
     text-align: center;
     min-height: 30px;
     color: #fff;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 1, 2, 3.1);
+    border:1px solid #2fff;
+    border-radius: 20px 5px;
 }
 
 .product-item img {
