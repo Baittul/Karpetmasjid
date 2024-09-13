@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing page</title>
+  <link rel="stylesheet" href="style-loading.css">
+</head>
+<body>
+  
+<div class="loader-container">
+    <div class="loader"></div>
+    <p id="loading-text">Tunggu sebentar...</p>
+  </div>
+  <script src="script-loading.js"></script>
+
+  
+</body>
+</html>
 
