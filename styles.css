@@ -118,8 +118,8 @@
 }
 
 body {
-    background-color: #50C878;
-    color: black;
+    background-color: #3A3B3C;
+    
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: normal;
     line-height: 1.8;
@@ -130,12 +130,12 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: #22CE83;
+    background-color: #454545;
     padding: 10px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     transition: top 0.3s;
     z-index: 1000;
-  
+   
 }
 
 .logo {
@@ -159,6 +159,7 @@ nav ul {
     margin: 2px;
     padding: 0 6px;
     display: flex;
+    
 }
 
 nav ul li {
@@ -166,10 +167,11 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color:  #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     transition: color 0.3s;
+    font-family: 'Dancing Script', cursive;
 }
 
 nav ul li a:hover {
@@ -246,7 +248,7 @@ nav ul li a:hover {
     text-align: center;
     background-color: ;
     border-radius: 10px 5px;
-    
+   
     
   
 }
@@ -254,8 +256,8 @@ nav ul li a:hover {
 .product-item {
     background-color: ;
     padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
+    
+    font-size: 18px;
     font-weight: Verdana;
     display: flex;
     flex-direction: column;
@@ -264,8 +266,8 @@ nav ul li a:hover {
     text-align: center;
     min-height: 30px;
     color: #fff;
-    box-shadow: 0 0 10px rgba(0, 1, 2, 3.1);
-    border:1px solid #2fff;
+    font-family: 'Dancing Script', cursive;
+    border:1px solid #837E7C;
     border-radius: 20px 5px;
 }
 
@@ -302,6 +304,7 @@ nav ul li a:hover {
         }
             p1 {
           color: #fff;
+          
         }
         
   .produk img {
