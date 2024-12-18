@@ -106,7 +106,7 @@ start;">kategory</p>
      <h style="float:left;margin:10px;font-family: 'Arial', sans-serif;font-size:15px;color:#fff;
 font-weight: bold">Cari karpet idaman umat muslim</h>
         <div id="berita" class="tabcontentt">
-  <a href="https://profilzipmsi/">
+  <a href="https://karpetmasjidalmuslim.com/">
        <div class='box' style="z-index:5;display:inline-block;width:90%;height:auto;margin-right:10px;
             margin-left:20px;border-bottom:0.5px solid Gainsboro;border-radius:15px;padding-bottom:1px;">
        <img style='width:100%;border-top-left-radius: 10px;border-top-right-radius: 20px;' src="programmer.gif">
@@ -120,7 +120,7 @@ font-weight: bold">Cari karpet idaman umat muslim</h>
       </div>
        </div>  
             <h style="float:left;margin:15px;font-family: 'Arial', sans-serif;font-size:13px;color:#fff;
-font-weight: bold">Pasti murah</h><a href='config2.html'>
+font-weight: bold">Pasti murah</h><a href='https://karpetmasjidalmuslim.com/'>
 <p style="color:red;float:right;margin:15px;font-family: 'Arial', sans-serif;font-size:15px">lihatsemua></p></a>
 
     </section>
