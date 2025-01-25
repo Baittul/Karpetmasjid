@@ -1,265 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Produk</title>
-    <link rel="stylesheet" href="kk-styles.css">
-    <style>
-      body {
+    <link rel="stylesheet" href="Style.css">
+     <link rel="stylesheet" href="responsive.css">
+<style>
+  body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
 }
 
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
 
-  .container {
-      display: flex;
-      justify-content: center; 
-      align-items: flex-start; 
-      flex-wrap: wrap; 
-      gap: 15px;
-      padding: 0;
-  }
+header h1 {
+    margin: 0;
+    font-size: 15px;
+    color: #ffcc00;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
-  .card {
-      background-color: #fff;
-      border-radius: 10px 25px;
-      box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-      width: 210px; /* Lebar kartu */
-      padding: 5px;
-      text-align: center;
-  }
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
 
+header nav ul li {
+    margin-left: 20px;
+}
 
-.product-image {
-    width: 80%;
-    height: auto;
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the products horizontally */
+    padding: 20px;
+}
+
+.product {
+    background-color: #7FFFD4;
     border-radius: 10px;
-    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: calc(100% - 40px); /* Default to full width minus margins */
+    max-width: 300px;
+    overflow: hidden;
     text-align: center;
 }
 
-.label {
-    background-color: #FF4500;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    position: absolute;
-    top: -10px;
-    left: 10px;
+.product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
 }
 
-.info h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #FF4500;
+.product-info {
+    padding: 10px;
 }
 
-.info h1 {
+.product-info .price {
+    font-size: 15px;
+    color: black;
+}
+
+.product-info .popular {
+    color: #ff0000;
+}
+
+.product-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.product-info p {
     margin: 5px 0;
-    font-size: 32px;
-    color: #000;
+    color: #333;
 }
 
-.info p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #999;
+.product-info button {
+    background-color: #DEB887;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.bonus {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #808000;
-    padding: 5px;
-    border-radius: 5px 20px;
+.product-info button:hover {
+    background-color: #FFE4C4;
 }
 
-.price {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #000;
-}
-
-@media screen and (max-width: 600px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-        margin-bottom: 10px;
-    }
-}
-@media screen and (max-width: 1000px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-        margin-bottom: 5px;
-    }
-}
-
-    </style>
+</style>
+    
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="label">cod</div>
-            <a href="Configa.html">
-            <img src="aqso1.jpg" alt="Product Image 1"class="product-image"><a/>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan Hari</p>
-                <p>Tebal:+-12mili</p>
+    <header>
+        <h1>BAITTUL MUSLIM</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Al aqso</a></li>
+                <li><a href="#">vid</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product-container">
+            <div class="product">
+                <img src="aqso1.jpg" alt="Karpet masjid merah">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <a href="config.html" >
+                    <button>Buy</button></a>
+                </div>
             </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
+            <div class="product">
+                <img src="aqso2.jpg" alt="Karpet masjid merah marun">
+              <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+            </div>
+            <!-- Tambahkan produk lainnya sesuai kebutuhan -->
+                        <div class="product">
+                <img src="aqso3.jpg" alt="Karpet masjid merah">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+            </div>
+            <div class="product">
+      <img src="aqso4.jpg
+          " alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+                
         </div>
-        
-        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="aqso2.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Tebal:+-12mili</p>
+                    <div class="product">
+                <img src="aqso5.jpg" alt="Karpet masjid merah">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
             </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-            
+            <div class="product">
+                <img src="aqso6.jpg" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+                
         </div>
-              <div class="card">
-            <div class="label">new</div>
-            <a href="Configa.html">
-            <img src="aqso3.jpg" alt="Product Image 1"class="product-image"><a/>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan Hari</p>
-                <p>Tebal:+-12mili</p>
+                    <div class="product">
+                <img src="aqso7.jpg" alt="Karpet masjid merah">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
             </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-        </div>
-        
-        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="aqso4.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-            
-        </div>  
-                        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="aqso9.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-            
-        </div>
- </div>
-           <!-- sebelh kiwe -->
-         <div class="container">
-        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="aqso5.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-        </div>
-        
-        <div class="card">
-          <div class="label">NEW</div>
-          <a href="#">
-            <img src="aqso6.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p></p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-            
-        </div>
-           <div class="card">
-            <div class="label">new</div>
-            <a href="Configa.html">
-            <img src="aqso7.jpg" alt="Product Image 1"class="product-image"><a/>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan Hari</p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-        </div>
-        
-        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="aqso8.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-            
-        </div>
-                <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="aqso9.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>al aqso</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Tebal:+-12mili</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp300.000</div>
-            
-        </div>
-     </div>
-     
-     
+            <div class="product">
+                <img src="aqso8.jpg" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="aqso9.jpg" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:300,000/m</p>
+                    <p class="popular">al aqso</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue10.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue11.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue12.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                                        <div class="product">
+                <img src="blue13.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue14.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                                        <div class="product">
+                <img src="blue15.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue16.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                                        <div class="product">
+                <img src="blue17.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue18.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                                        <div class="product">
+                <img src="blue19.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+                          <div class="product">
+                <img src="blue20.JPG" alt="Karpet masjid merah marun">
+                <div class="product-info">
+                    <p class="price">Rp:400,000/m</p>
+                    <p class="popular">populer</p>
+
+                    <p>Free: COD</p>
+
+                    <p>Stock :Ada</p>
+                    <button>Buy</button>
+                </div>
+              </div>  
+              
+    </main>
 </body>
 </html>
