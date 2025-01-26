@@ -1,377 +1,214 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Produk</title>
-    <link rel="stylesheet" href="Style.css">
-     <link rel="stylesheet" href="responsive.css">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Karpet Masjid</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-header {
-    background-color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Mencegah scroll horizontal */
+    }
 
-header h1 {
-    margin: 0;
-    font-size: 15px;
-    color: #ffcc00;
-    background-color: #333;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
+    /* Navbar */
+    .navbar {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-header nav ul li {
-    margin-left: 20px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 30px;
+      margin-right: 20px;
+    }
 
-header nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
 
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the products horizontally */
-    padding: 20px;
-}
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #444;
+      color: white;
+      transition: left 0.3s;
+      z-index: 999;
+    }
 
-.product {
-    background-color: #7FFFD4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    width: calc(100% - 40px); /* Default to full width minus margins */
-    max-width: 300px;
-    overflow: hidden;
-    text-align: center;
-}
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.product img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ccc;
-}
+    .sidebar li {
+      padding: 15px 20px;
+      border-bottom: 1px solid #555;
+    }
 
-.product-info {
-    padding: 10px;
-}
+    .sidebar li a {
+      color: white;
+      text-decoration: none;
+    }
 
-.product-info .price {
-    font-size: 15px;
-    color: black;
-}
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
 
-.product-info .popular {
-    color: #ff0000;
-}
+    /* Catalog */
+    .catalog {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 70px;
+      padding: 20px;
+    }
 
-.product-info h3 {
-    margin: 10px 0;
-    font-size: 20px;
-}
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-.product-info p {
-    margin: 5px 0;
-    color: #333;
-}
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
 
-.product-info button {
-    background-color: #DEB887;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
+    .card h3 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
 
-.product-info button:hover {
-    background-color: #FFE4C4;
-}
+    .card p {
+      margin: 5px 0;
+    }
 
-</style>
-    
+    .price {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Fixed Home Icon */
+    .home-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>BAITTUL MUSLIM</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Al aqso</a></li>
-                <li><a href="#">vid</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+  </nav>
 
-    <main>
-        <div class="product-container">
-            <div class="product">
-                <img src="aqso1.jpg" alt="Karpet masjid merah">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Produk</a></li>
+      <li><a href="#">Tentang Kami</a></li>
+      <li><a href="#">Kontak</a></li>
+    </ul>
+  </div>
 
-                    <p>Free: COD</p>
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-                    <p>Stock :Ada</p>
-                    <a href="config.html" >
-                    <button>Buy</button></a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="aqso2.jpg" alt="Karpet masjid merah marun">
-              <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
+  <!-- Katalog -->
+  <main class="catalog">
+    <div class="card">
+      <img src="aqso1.jpg" alt="Karpet 1">
+      <h3>Alaqso</h3>
+      <p>Ukuran: T12m x L120cm</p>
+      <p>Harga: <span class="price">Rp300.000/m</span></p>
+    </div>
+    <div class="card">
+      <img src="aqso2.jpg" alt="Karpet 2">
+      <h3>Alaqso</h3>
+      <p>Ukuran:</p>
+      <p>Tebal:12 mili </p>
+      <p>Lebar:120cm</p>
+      <p>Harga: <span class="price">Rp300.000/m</span></p>
+    </div>
+  </main>
 
-                    <p>Free: COD</p>
+  <!-- Tombol Home -->
+  <a href="https://karpetmasjidalmuslimsbr.wordpress.com" class="home-icon">🏠</a>
 
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-            </div>
-            <!-- Tambahkan produk lainnya sesuai kebutuhan -->
-                        <div class="product">
-                <img src="aqso3.jpg" alt="Karpet masjid merah">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      if (sidebar.style.left === '0px') {
+        sidebar.style.left = '-250px';
+        overlay.style.display = 'none';
+      } else {
+        sidebar.style.left = '0px';
+        overlay.style.display = 'block';
+      }
+    }
 
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-            </div>
-            <div class="product">
-      <img src="aqso4.jpg
-          " alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-                
-        </div>
-                    <div class="product">
-                <img src="aqso5.jpg" alt="Karpet masjid merah">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="aqso6.jpg" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-                
-        </div>
-                    <div class="product">
-                <img src="aqso7.jpg" alt="Karpet masjid merah">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="aqso8.jpg" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="aqso9.jpg" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:300,000/m</p>
-                    <p class="popular">al aqso</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue10.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue11.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue12.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                                        <div class="product">
-                <img src="blue13.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue14.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                                        <div class="product">
-                <img src="blue15.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue16.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                                        <div class="product">
-                <img src="blue17.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue18.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                                        <div class="product">
-                <img src="blue19.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-                          <div class="product">
-                <img src="blue20.JPG" alt="Karpet masjid merah marun">
-                <div class="product-info">
-                    <p class="price">Rp:400,000/m</p>
-                    <p class="popular">populer</p>
-
-                    <p>Free: COD</p>
-
-                    <p>Stock :Ada</p>
-                    <button>Buy</button>
-                </div>
-              </div>  
-              
-    </main>
+    function closeMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.style.left = '-250px';
+      overlay.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
