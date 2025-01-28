@@ -1,249 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katalog Karpet Masjid</title>
-  <style>
-    /* ZIPMSI CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Karpet Masjid</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden; /* Mencegah scroll horizontal */
-    }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #7FFF00;
+    color: #333;
+    padding: 20px;
+}
 
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #800000; 
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    margin-right: 10px;
+    background-color: #F0FFF0;
+    border: 2px solid #222;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+.product-card img {
     
-    .navbar {
-      background-color: #333;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
 
-    .hamburger {
-      font-size: 24px;
-      cursor: pointer;
-    }
+.product-card h2 {
+    color: #800000;
+    margin-bottom: 10px;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      margin-right: 30px;
-      margin-right: 20px;
-    }
+.price {
+    background-color: #25D;
+    color: #fff; 
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+   border: 2px solid gold; 
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .logo img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
 
-    
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: #444;
-      color: white;
-      transition: left 0.3s;
-      z-index: 999;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin-right: 20px;
-    }
-
-    .sidebar li {
-      padding: 15px 20px;
-      border-bottom: 1px solid #555;
-    }
-
-    .sidebar li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 998;
-    }
-
-    /* Catalog */
-    .catalog {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 70px;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 10px;
-      padding: 15px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .card img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .card p {
-      margin: 5px 0;
-    }
-
-    .price {
-      color: red;
-      font-weight: bold;
-    }
-
-    
-    .home-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 24px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="hamburger" onclick="toggleMenu()">
-      ☰
+    <header>
+        <h1 style="color:#fff;"> Karpet Al aqso<span> semua </span></h1>
+    </header>
+    <main>
+        <div class="product-card">
+            <img src="persia1.jpg" alt="Karpet Masjid Premium">
+            <h2>persia</h2>
+            <p><strong>Lebar:</strong> 120 cm</p>
+            <p><strong>Tebal:</strong> 10mm</p>
+            <div class="price">
+                <p>Rp 240.000</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="persia2.jpg" alt="Karpet Masjid Standard">
+            <h2>persia</h2>
+            <p><strong>Lebar:</strong> 120 cm</p>
+            <p><strong>Tebal:</strong> 10 mm</p>
+            <div class="price">
+                <p>Rp 240.000</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="persia4.jpg" alt="Karpet Masjid Ekonomis">
+            <h2>persia</h2>
+            <p><strong>Lebar:</strong> 120cm</p>
+            <p><strong>Tebal:</strong> 10mili</p>
+            <div class="price">
+                <p>Rp 240.000</p>
+            </div>
+        </div>
+        
+    <!-- gerobak taho -->
+    <div class="product-card">
+        <img src="persia5.jpg" alt="Karpet Masjid Premium">
+        <h2>persia</h2>
+        <p><strong>Lebar:</strong> 120 cm</p>
+        <p><strong>Tebal:</strong> 10 mm</p>
+        <div class="price">
+            <p>Rp 240.000</p>
+        </div>
     </div>
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
+    
+    <!-- taho putih -->
+    <div class="product-card">
+        <img src="persia6.jpg" alt="Karpet Masjid Standard">
+        <h2>persia</h2>
+        <p><strong>Lebar:</strong> 120 cm</p>
+        <p><strong>Tebal:</strong> 10 mm</p>
+        <div class="price">
+            <p>Rp 240.000</p>
+        </div>
     </div>
-  </nav>
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">tentang</a></li>
-      <li><a href="#">Kontak</a></li>
-    </ul>
-  </div>
+    <!-- gas taho  -->
+    <div class="product-card">
+        <img src="aqso6.jpg" alt="Karpet Masjid Ekonomis">
+        <h2>Al aqso</h2>
+        <p><strong>Lebar:</strong> 120 cm</p>
+        <p><strong>Tebal:</strong> 12 mm</p>
+        <div class="price">
+            <p>Rp 300.000</p>
+        </div>
+    </div>
 
-  <!-- Overlay -->
-  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+    <!-- created by: Zipmsi -->
+    <div class="product-card">
+        <img src="aqso7.jpg" alt="Karpet Masjid Deluxe">
+        <h2>Al aqso</h2>
+        <p><strong>Lebar:</strong> 120 cm</p>
+        <p><strong>Tebal:</strong> 12 mili</p>
+        <div class="price">
+            <p>Rp:300.000/meter</p>
+        </div>
+    </div>
 
-  <!-- Katalog -->
-  <main class="catalog">
-    <div class="card">
-      <img src="persia1.jpg" alt="Karpet 1">
-        <h3>persia</h3>
-      <p>Ukuran:</p>
-      <p>Tebal:10mili </p>
-      <p>Lebar:120cm</p>
-      <p>Harga: <span class="price">Rp240.000/m</span></p>
+    <div class="product-card">
+        <img src="aqso8.jpg" alt="Karpet Masjid Exclusive">
+        <h2>al aqso</h2>
+        <p><strong>Lebar:</strong> 120 cm</p>
+        <p><strong>Tebal:</strong> 12 mm</p>
+        <div class="price">
+            <p>Rp </p>
+        </div>
     </div>
-    <div class="card">
-      <img src="persia2.jpg" alt="Karpet 2">
-      <h3>persia</h3>
-      <p>Ukuran:</p>
-      <p>Tebal:10 mili </p>
-      <p>Lebar:120cm</p>
-      <p>Harga: <span class="price">Rp240.000/m</span></p>
+        <div class="product-card">
+        <img src="aqso8.jpg" alt="Karpet Masjid Exclusive">
+        <h2>al aqso</h2>
+        <p><strong>Lebar:</strong> 120 cm</p>
+        <p><strong>Tebal:</strong> 12mm</p>
+        <div class="price">
+            <p>Rp:300.000 </p>
+        </div>
     </div>
-        <div class="card">
-      <img src="persia3.jpg" alt="Karpet 1">
-        <h3>persia</h3>
-      <p>Ukuran:</p>
-      <p>Tebal:10mili </p>
-      <p>Lebar:120cm</p>
-      <p>Harga: <span class="price">Rp240.000/m</span></p>
-    </div>
-    <div class="card">
-      <img src="persia4.jpg" alt="Karpet 2">
-      <h3>persia</h3>
-      <p>Ukuran:</p>
-      <p>Tebal:10 mili </p>
-      <p>Lebar:120cm</p>
-      <p>Harga: <span class="price">Rp240.000/m</span></p>
-    </div>
-        <div class="card">
-      <img src="persia5.jpg" alt="Karpet 1">
-        <h3>persia</h3>
-      <p>Ukuran:</p>
-      <p>Tebal:10mili </p>
-      <p>Lebar:120cm</p>
-      <p>Harga: <span class="price">Rp240.000/m</span></p>
-    </div>
-    <div class="card">
-      <img src="persia6.jpg" alt="Karpet 2">
-      <h3>persia</h3>
-      <p>Ukuran:</p>
-      <p>Tebal:10 mili </p>
-      <p>Lebar:120cm</p>
-      <p>Harga: <span class="price">Rp240.000/m</span></p>
-    </div>
-  </main>
+</main>
 
-  <!-- Tombol Home -->
-  <a href="https://karpetmasjidalmuslimsbr.wordpress.com" class="home-icon">home</a>
-
-  <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      if (sidebar.style.left === '0px') {
-        sidebar.style.left = '-250px';
-        overlay.style.display = 'none';
-      } else {
-        sidebar.style.left = '0px';
-        overlay.style.display = 'block';
-      }
-    }
-
-    function closeMenu() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.style.left = '-250px';
-      overlay.style.display = 'none';
-    }
-  </script>
+    </main>
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+        chat
+    </a>
 </body>
 </html>
