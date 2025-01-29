@@ -38,7 +38,8 @@ main {
 
 .product-card {
     margin-right: 5px;
-    background-color: #BC8F8F;
+    background: linear-gradient(to bottom, #8A2BE2, #A52A2A 40%, blue);
+
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
@@ -54,12 +55,13 @@ main {
 }
 
 .product-card h2 {
-    color: #800000;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .price {
-    background-color: #25D;
+    background: linear-gradient(to right, black, #800, blue);
+
     color: #fff; 
     padding: 10px;
     margin-top: 10px;
@@ -101,15 +103,31 @@ main {
     75% { border-color: EDEE4D; }
     100% { border-color: #bbcc33; }
 }
+.price-tuying {
+    background-color: #FF4500;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+p {
+  color:#fff;
+}
     </style>
 </head>
 <body>
     <header>
         <h1 style="color:#222;font-size:15px;"> Karpet persia<span> semua </span></h1>
     </header>
-            <h1 style="color:#222;font-size:15px;margin-top:50px;"> Karpet persia</h1>
+
     <main>
         <div class="product-card">
+          <div class="price-tuying">
+                <p>COD</p>
+            </div>
             <img src="persia1.jpg" alt="Karpet Masjid Premium">
             <h2>persia</h2>
             <p><strong>Lebar:</strong> 120 cm</p>
@@ -119,6 +137,7 @@ main {
             </div>
         </div>
         <div class="product-card">
+          
             <img src="persia2.jpg" alt="Karpet Masjid Standard">
             <h2>persia</h2>
             <p><strong>Lebar:</strong> 120 cm</p>
@@ -127,6 +146,7 @@ main {
                 <p>Rp 240.000</p>
             </div>
         </div>
+        
         <div class="product-card">
             <img src="persia4.jpg" alt="Karpet Masjid Ekonomis">
             <h2>persia</h2>
@@ -202,7 +222,7 @@ main {
 </main>
 
     </main>
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+    <a href="https://wa.me//+6281291029600" class="whatsapp-button" target="_blank">
         chat
     </a>
     <script>
@@ -244,7 +264,7 @@ const config = {
     }
 };
 
-// Buat chart
+
 new Chart(ctx, config);
 
     </script>
