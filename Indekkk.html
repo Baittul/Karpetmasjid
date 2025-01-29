@@ -15,7 +15,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #7FFF00;
+    background-color: #FFF0F5;
     color: #333;
     padding: 20px;
 }
@@ -27,6 +27,7 @@ header {
 
 h1 {
     color: #800000; 
+    margin-right: 50px;
 }
 
 main {
@@ -36,13 +37,13 @@ main {
 }
 
 .product-card {
-    margin-right: 10px;
-    background-color: #F0FFF0;
-    border: 2px solid #222;
+    margin-right: 5px;
+    background-color: #BC8F8F;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
     text-align: center;
+    
 }
 .product-card img {
     
@@ -87,13 +88,26 @@ main {
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
+.price:hover {
+    border: 3px solid red; 
+    border-radius: 50px;
+    animation: colorChange 1s infinite;
+}
 
+@keyframes colorChange {
+    0% { border-color: red; }
+    25% { border-color: #808 ; }
+    50% { border-color: white; }
+    75% { border-color: EDEE4D; }
+    100% { border-color: #bbcc33; }
+}
     </style>
 </head>
 <body>
     <header>
-    
+        <h1 style="color:#222;font-size:15px;"> Karpet persia<span> semua </span></h1>
     </header>
+            <h1 style="color:#222;font-size:15px;margin-top:50px;"> Karpet persia</h1>
     <main>
         <div class="product-card">
             <img src="persia1.jpg" alt="Karpet Masjid Premium">
@@ -173,7 +187,7 @@ main {
         <p><strong>Lebar:</strong> 120 cm</p>
         <p><strong>Tebal:</strong> 12 mm</p>
         <div class="price">
-            <p>Rp </p>
+            <p>Rp300.000</p>
         </div>
     </div>
         <div class="product-card">
@@ -191,5 +205,48 @@ main {
     <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
         chat
     </a>
+    <script>
+      
+      const ctx = document.getElementById('myChart').getContext('2d');
+
+
+const data = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [{
+        label: 'Penjualan (Juta Rupiah)',
+        data: [12, 19, 3, 5, 8, 13],
+        backgroundColor: [
+            'rgba(75, 192, 192, 0.2)',
+        ],
+        borderColor: [
+            'rgba(75, 192, 192, 1)',
+        ],
+        borderWidth: 2
+    }]
+};
+
+
+const config = {
+    type: 'line', // 'bar', 'pie', dll
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top'
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+};
+
+// Buat chart
+new Chart(ctx, config);
+
+    </script>
 </body>
 </html>
