@@ -1,327 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Produk</title>
-    <link rel="stylesheet" href="kk-styles.css">
-    <style>
-      body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 20px;
-}
+    <title>Karpet Masjid Al Muslim</title>
+    <link rel="stylesheet" href="style.c">
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-.container {
-    display: inline;
-    justify-content: space-between; 
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 0;
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 10px 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Lebar kartu */
-    padding: 5px;
-    position: relative;
-    text-align: center;
     
-}
-.product-image {
-    width: 80%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+    hamburger.addEventListener("click", function (event) {
+        event.stopPropagation(); 
+        navMenu.style.display = navMenu.style.display === "block" ? "none" : "block";
+    });
 
-.label {
-    background-color: #FF4500;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-}
+    
+    document.addEventListener("click", function (event) {
+        if (!navMenu.contains(event.target) && event.target !== hamburger) {
+            navMenu.style.display = "none";
+        }
+    });
+});
 
-.info h3 {
+    </script>
+    <style>
+      * {
     margin: 0;
-    font-size: 18px;
-    color: #FF4500;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.info h1 {
-    margin: 5px 0;
-    font-size: 32px;
-    color: #000;
+body {
+    background: #fff;
+    text-align: center;
 }
 
-.info p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #999;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #000;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
-.bonus {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #808000;
-    padding: 5px;
-    border-radius: 5px 20px;
+.logo img {
+    width: 50px;
 }
 
-.price {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #000;
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
 
-    .card {
-        width: 90%;
-        margin-bottom: 10px;
-    }
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+main {
+    padding: 100px 20px 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.produk {
+    border-top: 2px solid black;
+    padding: 20px 0;
+}
+
+.produk {
+    border-top: 2px solid black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.produk img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.info-produk {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.nama-produk {
+    color: #DEB887;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.harga {
+    color: #222;
+    font-weight: bold;
+    background-color: #FFE4C4;
+    border-radius:50px;
+    font-size: 15px;
 }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="label">new</div>
-            <a href="Configa.html">
-            <img src="bluemos1.jpg" alt="Product Image 1"class="product-image"><a/>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Perbarui Otomatis</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Al Muslim">
         </div>
-        
-        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos2.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>Pesan </p>
-                <p>Hari ini juga</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-            
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="https://karpetmasjidalmuslimsbr.wordpress.com">Home</a></li>
+                <li><a href="https://www.facebook.com/share/12Ex5AebnJn/">Facebook</a></li>
+                <li><a href="https://wa.me//+6281291029600">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Karpet masjid almuslim</h1>
+        <h2>Kategori</h2>
+
+<div class="produk">
+    <img src="bluemos1.jpg" alt="Karpet Merah">
+    <div class="info-produk">
+        <p class="nama-produk">new bluemosque</p>
+        <p class="harga">Rp: 390.000/m</p>
         </div>
-          <div class="card">
-            <div class="label">NEW</div>
-            <a href="">
-            <img src="bluemos3.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>Happy</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>Pesan sekarang</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-            
-        </div>
-          <div class="card">
-           <div class="label">NEW</div>
-           <a href="">
-            <img src="bluemos4.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>Pesan sekarang</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-            
-        </div>
-            <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos5.jpg" alt="Product Image 1" class="product-image"><a/>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>Hari ini juga</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-                    <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos6.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+ Voice Call to ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>            <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos7.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-                    <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos8.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+  ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-     </div>
-           <!-- sebelh kiwe -->
-         <div class="container">
-        <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos9.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+  ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-        
-        <div class="card">
-          <div class="label">NEW</div>
-          <a href="#">
-            <img src="bluemos10.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>green</p>
-                <p>Tebal:10mili</p>
-            </div>
-            <div class="bonus">+  ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-            
-        </div>
-            <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos11.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>Pesan sekarang</p>
-            </div>
-            <div class="bonus">+  ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-            
-        </div>
-            <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos12.jpg" alt="Product Image 2" class="product-image"></a>
-            <div class="info">
-                <h3>bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>Pesan sekarang</p>
-            </div>
-            <div class="bonus">+  ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-            
-        </div>
-            <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos13.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+  ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-                    <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos14.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-                    <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos15.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-                    <div class="card">
-            <div class="label">NEW</div>
-            <a href="#">
-            <img src="bluemos16.jpg" alt="Product Image 1" class="product-image"></a>
-            <div class="info">
-                <h3>Bluemosque</h3>
-                <h1>COD</h1>
-                <p>pesan</p>
-                <p>order</p>
-            </div>
-            <div class="bonus">+ ALMUSLIM</div>
-            <div class="price">Rp390.000</div>
-        </div>
-        
-     </div>
-     
-     
+        <p>Tebal:13 mili</p>
+        <p>Lebar:120 cm</p>
+    
+</div>
+
+<div class="produk">
+    <img src="bluemos2.jpg" alt="Karpet Hijau">
+    <div class="info-produk">
+        <p class="nama-produk">new bluemosque</p>
+        <p class="harga">Rp: 390.000/m</p>
+    </div>
+            <p>Tebal:13 mili</p>
+        <p>Lebar:120 cm</p>
+</div>
+<div class="produk">
+    <img src="bluemos3.jpg" alt="Karpet Merah">
+    <div class="info-produk">
+        <p class="nama-produk">new blumosque</p>
+        <p class="harga">Rp: 390.000/m</p>
+    </div>
+            <p>Tebal:13 mili</p>
+        <p>Lebar:120 cm</p>
+</div>
+
+<div class="produk">
+    <img src="bluemos4.jpg" alt="Karpet Hijau">
+    <div class="info-produk">
+        <p class="nama-produk">new bluemosque</p>
+        <p class="harga">Rp: 390.000/m</p>
+    </div>
+            <p>Tebal:13 mili</p>
+        <p>Lebar:120 cm</p>
+</div>
+<div class="produk">
+    <img src="bluemos5.jpg" alt="Karpet Merah">
+    <div class="info-produk">
+        <p class="nama-produk">new bluemosque</p>
+        <p class="harga">Rp: 390.000/m</p>
+    </div>
+                <p>Tebal:13 mili</p>
+        <p>Lebar:120 cm</p>
+</div>
+
+<div class="produk">
+    <img src="bluemos6.jpg" alt="Karpet Hijau">
+    <div class="info-produk">
+        <p class="nama-produk">new bluemosque</p>
+        <p class="harga">Rp: 390.000/m</p>
+    </div>
+                <p>Tebal:13 mili</p>
+        <p>Lebar:120 cm</p>
+</div>
+
+    </main>
+
 </body>
 </html>
